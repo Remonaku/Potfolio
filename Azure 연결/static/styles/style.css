@@ -1,0 +1,12 @@
+.case {
+    margin-bottom: 10px;
+}
+
+.case > div {
+    font-weight: bold;
+}
+
+#send_btn {
+    width: 100px;
+    height: 40px;
+}

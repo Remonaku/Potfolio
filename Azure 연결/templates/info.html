@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <title>입력창</title>
+</head>
+<body>
+    <div>
+        <!-- action과 method 안에 submit도 같이 있어야 POST가 된다. -->
+        <form action="/submit" method="POST">
+            <div class = "case">
+                <div>NAME</div>
+                <input name="user_name" type="text">
+            </div>
+            <div class = "case">
+                <div>ID</div>
+                <input name="user_id" type="text">
+            </div>
+            <div class = "case">
+                <div>PW</div>
+                <input name="user_pw" type="password">
+            </div>
+            <div class = "case">
+                <div>BIRTHDAY</div>
+                <input name="user_birth" type="date">
+            </div>
+            <div class = "case">
+                <div>E-MAIL</div>
+                <input name="user_email_front" type="text">@<input name="user_email_behind" type="text">
+            </div>
+            <input id="send_btn" type="submit" name="SEND">
+        </form>
+    </div>
+</body>
+</html>
