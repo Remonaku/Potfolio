@@ -1,0 +1,434 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Pretendard';
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format('woff');
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Pretendard';
+    color: #646464;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #919191;
+}
+
+#all {
+    width: 1024px;
+    height: 1200px;
+}
+
+/* header 영역 */
+#header {
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+    box-sizing: border-box;
+}
+
+#header .logo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2em;
+    color: #76cadf;
+}
+
+#header nav a {
+    width: 80px;
+    height: 40px;
+    float: right;
+    margin-top: -40px;
+    margin-right: 30px;
+    background-color: rgb(238, 237, 237);
+    border: 1px #dddddd solid;
+    text-align: center;
+    padding: 8px 0;
+    box-sizing: border-box;
+}
+
+#header nav a:hover {
+    background-color: #76cadf;
+    color: white;
+    border: none;
+}
+
+#header nav p:first-child {
+    margin-top: 10px;
+}
+
+#banner {
+    width: 100%;
+    height: 600px;
+    padding-top: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+/* https://burst.shopify.com/ */
+#banner::before {
+    content: "";
+    background-image: url('/static/images/woman.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.bannertextbox {
+    width: 90%;
+    height: 400px;
+    padding: 70px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.title01 {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.text01 {
+    line-height: 180%
+}
+
+.detect {
+    margin-top: 30px;
+}
+
+.detect a {
+    display: block;
+    width: 20%;
+    height: 60px;
+    padding-top: 20px;
+    box-sizing: border-box;
+    background-color: #76cadf;
+    color: white;
+}
+
+.detect a:hover {
+    background-color: rgb(238, 237, 237);
+    color: #646464;
+    border: 1px #dddddd solid;
+}
+
+/* 첫 번째 섹션 */
+#one_section {
+    width: 100%;
+    height: 400px;
+    margin: 50px 0;
+}
+
+.inner01 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.left {
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: right;
+}
+
+.left>div {
+    margin-right: 20px;
+}
+
+.left h3 {
+    font-size: 17px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #76cadf;
+    font-weight: 600;
+}
+
+.text02 {
+    line-height: 150%;
+    font-size: 15px;
+}
+
+.text03 {
+    line-height: 150%;
+    font-size: 15px;
+}
+
+.icon01 {
+    font-size: 8em;
+    text-align: center;
+    width: 25%;
+    height: 70%;
+    margin: 40px 0;
+    position: absolute;
+    top: 0;
+    left: 37%;
+    border: #dddddd 1px solid;
+    border-radius: 50%;
+}
+
+.icon01 i {
+    color: #dddddd;
+    margin-top: 73px;
+}
+
+.right {
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.right>div {
+    margin-left: 20px;
+}
+
+.right h3 {
+    font-size: 17px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: #76cadf;
+    font-weight: 600;
+}
+
+.text04 {
+    line-height: 150%;
+    font-size: 15px;
+}
+
+.text05 {
+    line-height: 150%;
+    font-size: 15px;
+}
+
+/* 두 번째 섹션 */
+#two_section {
+    width: 100%;
+    height: 350px;
+    background-color: #60a6b8;
+    padding: 30px 0;
+}
+
+.inner02 {
+    width: 90%;
+    height: 100%;
+    padding-top: 2%;
+    box-sizing: border-box;
+}
+
+.inner02 h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+blockquote {
+    text-align: center;
+    line-height: 150%;
+    color: white;
+}
+
+/* 세 번째 섹션 */
+#three_section {
+    width: 100%;
+    height: 600px;
+    padding: 30px 0;
+    margin-top: 100px;
+}
+
+.inner03 {
+    width: 100%;
+    height: 100%;
+}
+
+.imageWrap {
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+
+.imgbox01 {
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: 3%;
+    top: 0;
+    border: #dddddd 1px solid;
+}
+
+.imgbox02 {
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 35%;
+    border: #dddddd 1px solid;
+}
+
+.imgbox03 {
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 3%;
+    border: #dddddd 1px solid;
+}
+
+.img01 {
+    width: 100%;
+    height: 55%;
+    text-align: center;
+    padding-top: 20%;
+    box-sizing: border-box;
+    border-bottom: 1px #dddddd solid;
+}
+
+.img02 {
+    width: 100%;
+    height: 55%;
+    text-align: center;
+    padding-top: 10%;
+    box-sizing: border-box;
+    border-bottom: 1px #dddddd solid;
+}
+
+.img03 {
+    width: 100%;
+    height: 55%;
+    text-align: center;
+    padding-top: 10%;
+    box-sizing: border-box;
+    border-bottom: 1px #dddddd solid;
+}
+
+.content01 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content01 h3 {
+    margin-bottom: 10px;
+    color: #76cadf;
+}
+
+.content01 p {
+    line-height: 180%;
+    margin-top: 15%;
+    font-size: large;
+}
+
+.content02 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content02 h3 {
+    margin-bottom: 10px;
+    color: #76cadf;
+}
+
+.content02 p {
+    line-height: 180%;
+    margin-top: 15%;
+    font-size: large;
+}
+
+.content03 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content03 h3 {
+    margin-bottom: 10px;
+    color: #76cadf;
+}
+
+.content03 p {
+    line-height: 180%;
+    margin-top: 15%;
+    font-size: large;
+}
+
+/* footer 영역 */
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #76cadf;
+    font-size: 13px;
+    line-height: 1.8;
+    position: relative;
+    margin-top: 40px;
+}
+
+.company {
+    width: 80%;
+    padding-top: 30px;
+    box-sizing: border-box;
+    margin-left: 60px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+}
+
+.company>p:first-of-type,
+.company>p:last-of-type {
+    font-weight: 600;
+}
+
+.home {
+    width: 800px;
+    margin-left: 60px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.home>span::after {
+    content: " | ";
+    margin: 0 10px;
+}
+
+.center {
+    width: 250px;
+    height: 150px;
+    line-height: 1.8;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.center>p:first-of-type,
+.center>p:nth-of-type(6) {
+    font-weight: 600;
+}
+
+.center>p:nth-of-type(6) {
+    margin-top: 20px;
+}
+
+.home a:hover {
+    opacity: 0.8;
+}

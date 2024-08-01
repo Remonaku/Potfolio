@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            AI 충치 자가진단
+        </title>
+        <!-- awesome -->
+        <script src="https://kit.fontawesome.com/e110d43ad3.js" crossorigin="anonymous"></script>
+
+        <!-- css 연동 -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href={{ url_for('static', filename='images/favicon.png')}}>
+
+    </head>
+
+    <body>
+        <div id="all">
+            <!-- HEADER 영역 -->
+            <header id="header">
+                <a href="{{url_for('main')}}" class="logo">
+                    Self-Diagnosis Program for Oral Health
+                </a>
+
+                <!-- nav 영역 -->
+                <nav>
+                    {% if 'email' in session %}
+                        <p>{{ session['username'] }} 님 어서오세요!</p>
+                        <a href="{{ url_for('auth.logout') }}" class="button alt">
+                            로그아웃
+                        </a>
+                    {% else %}
+                    <a href="{{ url_for('login') }}" class="button alt">
+                        로그인
+                    </a>
+                    {% endif %}
+                </nav>
+            </header>
+
+            <!-- banner 영역 -->
+            <article id="banner">
+                <div class="bannertextbox">
+                    <h1 class="title01">
+                        AI 치아 자가진단
+                    </h1>
+                    <p class="text01">
+                        AI 치아 자가진단 프로그램이란,
+                        <br>
+                        AI 딥러닝 기술을 활용하여 사용자들이 간편하게 구강 건강을
+                        <br>
+                        스스로 진단할 수 있는 기능을 제공하는 프로그램입니다.
+                        <br>
+                        신속하고 정확한 결과를 제공하여 사용자들에게 편의성을 제공합니다.
+                        <br>
+                        지금 바로 사용하여 건강한 치아를 유지하세요!
+                    </p>
+                    <ul class="detect">
+                        <li>
+                            <a href="{{ url_for('detect.detect')}}" class="detect" id="getStarted">
+                                Get Started
+                            </a>
+                        </li>
+                    </ul>
+                </div>  
+            </article>
+
+            <!-- 첫 번째 섹션 -->
+            <article id="one_section" class="Wrapper01">
+                <div class="inner01">
+                    <div class="left">
+                        <div>
+                            <h3 class="title02">
+                                저작면(씹는 면) 충치
+                            </h3>
+                            <p class="text02">
+                                가장 흔하며 발생하기 쉬운 충치
+                                <br>
+                                치아에 검은 점이 생긴 것으로 판단 가능
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="title03">
+                                치경부 우식증
+                            </h3>
+                            <p class="text03">
+                                치아와 잇몸이 맞닿는 부위에 발생하는 충치
+                                <br>
+                                여러 이유로 잇몸이 약해지거나,
+                                <br>
+                                구토 및 역류성 식도염 등으로 위산이 올라와
+                                <br>
+                                치아에 손상을 주는 게 반복되면서 발생<br>
+                                장년층에게서 많이 발생
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="icon01">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+
+                    <div class="right">
+                        <div>
+                            <h3 class="title04">
+                                옆면 충치
+                            </h3>
+                            <p class="text04">
+                                치아의 넓은 옆면에 발생하는 충치
+                                <br>
+                                볼살과 맞닿아 있는 어금니에 많이 발생
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="title05">
+                                인접면 충치
+                            </h3>
+                            <p class="text05">
+                                2개의 치아 사이에 발생하는 충치
+                                <br>
+                                흔히 발생하지만, 잘 보이지 않고 통증도<br>그리 심하지 않기에 주기적으로 검진 받지 않는 경우<br> 발견하기 어려움
+                                <br>
+                                옆으로 누운 사랑니가 많이 발생시킴
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 두 번째 섹션 -->
+            <article id="two_section" class="Wrapper02">
+                <div class="inner02">
+                    <h2 class="title06">
+                        AI 인공지능
+                    </h2>
+                    <figure>
+                        <blockquote class="text06">
+                            AI 인공지능이란, 인간의 능력을 컴퓨터로 구현한 것을 말합니다.
+                            <br>
+                            이를 통해 우리는 많은 문제를 해결하고 작업을 자동화할 수 있으며,
+                            <br>
+                            새로운 기술과 혁신을 이끌어낼 수 있습니다.
+                        </blockquote>
+                    </figure>
+                    <h2 class="title07">
+                        딥러닝
+                    </h2>
+                    <figure>
+                        <blockquote class="text07">
+                            딥러닝이란, 인공지능의 한 분야로 인간의 뇌 구조에서 영향을 받아 만들어졌습니다.
+                            <br>
+                            컴퓨터가 데이터로부터 패턴을 스스로 학습하는 기술을 말합니다.
+                            <br>
+                            이미지 인식, 음성 인식, 자연어 처리 등 다양한 분야에서 활용됩니다.
+                        </blockquote>
+                    </figure>
+                </div>
+            </article>
+
+            <!-- 세 번째 섹션 -->
+            <article id="three_section" class="Wrapper03">
+                <div class="inner03">
+                    <div class="imageWrap">
+                        <div class="imgbox01">
+                            <div class="img01">
+                                <img src="{{url_for('static',filename='images/tooth01.png')}}" alt="tooth01"
+                                width="200">
+                            </div>
+                            <div class="content01">
+                                <h3>
+                                    건강한 치아 유지법 01
+                                </h3>
+                                <p>
+                                    올바른 칫솔질 하기
+                                    <br>
+                                    식후 3분 이내에 양치질 시행 권장
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="imgbox02">
+                            <div class="img02">
+                                <img src="{{url_for('static',filename='images/tooth02.png')}}" alt="tooth02"
+                                width="200">
+                            </div>
+                            <div class="content02">
+                                <h3>건강한 치아 유지법 02</h3>
+                                <p>
+                                    치실 사용 습관화하기
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="imgbox03">
+                            <div class="img03">
+                                <img src="{{url_for('static',filename='images/tooth03.png')}}" alt="tooth03"
+                                width="180">
+                            </div>
+                            <div class="content03">
+                                <h3>
+                                    건강한 치아 유지법 03</h3>
+                                <p>
+                                    치아 건강에 도움이 되는 <br>음식물 많이 섭취하기
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- footer 영역 -->
+            <footer id="down">
+                <div class="company">
+                    <p> COMPANY </p>
+                    <p> C.O.D.E <br>
+                        COMPANY. 주식회사 C.O.D.E BUSINESS LICENSE. 123-456-7890 <br>
+                        ADDRESS : 07290 서울특별시 강동구 천호동 000 나비빌딩 6F AI개발 3팀 <br>
+                        E-MAIL : C.O.D.E@GMAIL.COM FAX. 02-1234-5678 <br>
+                        COPYRIGHT © C.O.D.E ALL RIGHTS RESERVED. <br> <br>
+                    </p>
+                    <p> 본 사이트에 사용된 모든이미지의 저작권과 초상권은 주식회사 C.O.D.E에 있으며 무단도용시 법적 처벌을 받을 수 있습니다.</p>
+                </div>
+
+                <div class="center">
+                    <p>CUSTOMER CENTER</p>
+                    <p> 1234-5678 </p>
+                    <p> 운영시간 : 09:00 - 18:00 </p>
+                    <p> Lunch : 12:00 - 13:00</p>
+                    <p> 토/일/공휴일(임시공휴일 포함) 휴무 </p>
+                </div>
+
+                <p class="home">
+                    <span> <a href="#"> 홈으로 </a> </span>
+                    <span> <a href="#"> 회사소개 </a></span>
+                    <span> <a href="#"> 이용약관 </a></span>
+                    <span> <a href="#"> 개인정보 처리방침 </a></span>
+                    <span> <a href="#"> 이용안내 </a></span>
+                </p>
+
+            </footer>
+        </div>
+        <script src="{{url_for('static', filename = 'js/main.js')}}">
+        </script>
+    </body>
+</html>

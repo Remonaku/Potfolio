@@ -1,0 +1,1 @@
+best parameter: epoch 200, batch 50

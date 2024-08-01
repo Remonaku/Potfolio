@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            AI 충치 자가진단
+        </title>
+        <!-- awesome -->
+        <script src="https://kit.fontawesome.com/e110d43ad3.js" crossorigin="anonymous"></script>
+
+        <!-- css 연동 -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css')}}">
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href={{ url_for('static', filename='images/favicon.png')}}>
+
+    </head>
+
+    <body>
+        <div id="all">
+            <!-- HEADER 영역 -->
+            <header id="header">
+                <a href="{{url_for('main')}}" class="logo">
+                    Self-Diagnosis Program for Oral Health
+                </a>
+
+                <!-- nav 영역 -->
+                <nav>
+                    {% if 'email' in session %}
+                    <a href="{{ url_for('auth.logout') }}" class="button alt">
+                        로그아웃
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('login') }}" class="button alt">
+                        로그인
+                    </a>
+                    {% endif %}
+                </nav>
+            </header>
+
+            <!-- article 영역 -->
+            <article id="one_section">
+                <h1 class="title01">
+                    AI 치아 자가진단 결과
+                </h1>       
+                <hr>    
+                <div class="bannertextbox">
+                    <!-- 업로드된 이미지를 보여줄 공간 -->
+                    <div id="imageContainer">
+                        <img src="{{ url_for('static', filename='user_img/detected_img/result_image_0.jpg') }}" alt="result_image" id="result_image" width="650">
+                    </div>
+                    <div class="result">
+                        <h4> 당신의 치아 등급은? </h4>
+                        <div class="score_result">
+                            <p class="abnormal"> 이상 치아 <br> {{result_area_count_paths[0]}}</p>
+                            <p class="abnormal_area"> 이상 치아 영역 <br> {{result_count_paths[0]}}</p>
+                            <p class="tooth_score"> 점수  <br> {{result_score_paths[0]}} </p>
+                            <p class="tooth_grade"> 등급  <br> {{result_grade_paths[0]}}</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- footer 영역 -->
+            <footer id="down">
+                <div class="company">
+                    <p> COMPANY </p>
+                    <p> C.O.D.E <br>
+                        COMPANY. 주식회사 C.O.D.E BUSINESS LICENSE. 123-456-7890 <br>
+                        ADDRESS : 07290 서울특별시 강동구 천호동 000 나비빌딩 6F AI개발 3팀 <br>
+                        E-MAIL : C.O.D.E@GMAIL.COM FAX. 02-1234-5678 <br>
+                        COPYRIGHT © C.O.D.E ALL RIGHTS RESERVED. <br> <br>
+                    </p>
+                    <p> 본 사이트에 사용된 모든이미지의 저작권과 초상권은 주식회사 C.O.D.E에 있으며 무단도용시 법적 처벌을 받을 수 있습니다.</p>
+                </div>
+
+                <div class="center">
+                    <p>CUSTOMER CENTER</p>
+                    <p> 1234-5678 </p>
+                    <p> 운영시간 : 09:00 - 18:00 </p>
+                    <p> Lunch : 12:00 - 13:00</p>
+                    <p> 토/일/공휴일(임시공휴일 포함) 휴무 </p>
+                </div>
+
+                <p class="home">
+                    <span> <a href="#"> 홈으로 </a> </span>
+                    <span> <a href="#"> 회사소개 </a></span>
+                    <span> <a href="#"> 이용약관 </a></span>
+                    <span> <a href="#"> 개인정보 처리방침 </a></span>
+                    <span> <a href="#"> 이용안내 </a></span>
+                </p>
+
+            </footer>
+        </div>
+    </body>
+</html>

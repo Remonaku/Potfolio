@@ -1,0 +1,113 @@
+<!-- 참고 디자인 : https://codepen.io/Rh2o/pens/showcase -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> AI 치아 자가진단 로그인/회원가입 </title>
+
+    <script src="https://kit.fontawesome.com/e110d43ad3.js" crossorigin="anonymous"></script>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <!-- css 연동 -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png')}}">
+</head>
+
+<body>
+
+    <h2> AI Self-Diagnosis Program for Oral Health </h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="/signup" method="post" onsubmit="return validateForm()">
+                <h1>
+                    <i class="fa-solid fa-tooth"></i>
+                </h1>
+                <div id="firstSignUp" style="display: block;">
+                    <div id="input_id" name="input_id" style="display: flex; align-items: baseline;">
+                        <input type="text" name="user_id" style="flex: 1; width: 40%;" placeholder="아이디" />
+                        <p name="golbangee" id="golbangee" style="margin: 0 5px;">
+                            @
+                        </p>
+                        
+                        <input name="domain" type="box" id="domainInput" type="text"/>
+                        <select class="domainList" id="domainList" onchange="updateInput()">
+                            <option value="type" class="directly_input"> 직접 입력 </option>
+                            <option value="naver.com"> naver.com </option>
+                            <option value="daum.net"> daum.net </option>
+                            <option value="gmail.com"> gmail.com </option>
+                            <option value="nate.com"> nate.com </option>
+                            <option value="google.com"> google.com </option>
+                            <option value="kakao.com"> kakao.com </option>
+                        </select>
+                        <button type="button" id="id_check" name="checkID" 
+                        onclick="idCheck()" > 중복체크 </button>
+                    </div>
+                    
+                    <input id="password" name="password" type="password" placeholder="비밀번호 (영문+숫자 12자 이상)" />
+
+                    <input id="password2" type="password" placeholder="비밀번호확인" />
+
+                    <button type="button" id="nextBtn" style="margin-top:10px">
+                        다음
+                    </button>
+                </div>
+                
+                <div id="secondSignUp" style="display: none;">
+                    <input name="username"type="text" placeholder="이름" />
+                    <input name="phone" type="phone"  placeholder="전화번호" />
+                    <div style="display: flex; align-items: baseline;">
+                        <input id="adres1" name="adres1" type="text" style="flex: 1; width: 40%;" placeholder="주소" readonly />
+                        <button type="button" onclick="execDaumAdres()" style="padding: 12px 20px; margin-left:10px;">검색</button>
+                    </div>
+                    <input id="adres2" name="adres2" type="text" placeholder="상세주소" />
+                    <button type="submit" id="signUpBtn">Sign Up</button>
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">            
+            <form action="{{url_for('auth.signin')}}" method="post">
+                <h1>
+                    <i class="fa-solid fa-tooth"></i>
+                </h1>
+                <input type="email" name="email" placeholder="아이디(이메일)" />
+                <input type="password" name="password" placeholder="비밀번호" />
+                <button type="submit">
+                    로그인
+                </button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1> 
+                        <i class="fa-solid fa-tooth"></i>
+                    </h1>
+                    <p class="SignIn"> 로그인 화면으로 이동하세요 </p>
+                    <button class="ghost" id="signIn">로그인 화면 이동</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>
+                        AI 치아 자가진단 프로그램에 오신
+                    </h1>
+                    <h1> 여러분 환영합니다! </h1>
+                    <p>진단을 위해 회원가입이 필요합니다.</p>
+                    <button class="ghost" id="signUp">
+                        회원가입 화면 이동
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename = 'js/login.js')}}">
+    </script>
+</body>
+
+</html>
